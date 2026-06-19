@@ -33,6 +33,7 @@
         <a href="#sobre">Sobre</a>
         <a href="#servicos">Serviços</a>
         <a href="#planos">Planos</a>
+        <a href="#anamnese">Anamnese</a>
         <a href="#cta" class="btn btn--nav">Começar Agora</a>
       </nav>
       <button class="navbar__hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
@@ -44,6 +45,7 @@
       <a href="#sobre" class="mobile-link">Sobre</a>
       <a href="#servicos" class="mobile-link">Serviços</a>
       <a href="#planos" class="mobile-link">Planos</a>
+      <a href="#anamnese" class="mobile-link">Anamnese</a>
       <a href="#cta" class="mobile-link mobile-link--cta">Começar Agora</a>
     </nav>
   </header>
@@ -426,6 +428,310 @@
           <a href="https://wa.me/5562991889779" target="_blank" rel="noopener noreferrer">Fale diretamente com Carlos</a>
           e ele te orienta.
         </p>
+      </div>
+    </section>
+
+    <!-- ========== ANAMNESE ========== -->
+    <section class="anamnese" id="anamnese" aria-labelledby="anamnese-title">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-tag">Primeiro Passo</span>
+          <h2 class="section-title" id="anamnese-title">
+            Formulário de<br />
+            <span class="text-accent">Anamnese</span>
+          </h2>
+          <p class="section-subtitle">
+            Para montar um planejamento 100% voltado para a sua individualidade, preciso conhecer você. Responda com o máximo de detalhes — é a partir daqui que vou desenhar a melhor rota para o seu resultado nos próximos 40 dias. 💪
+          </p>
+        </div>
+
+        <form class="anamnese-form" id="anamneseForm" novalidate>
+
+          <!-- ── BLOCO 1: DADOS PESSOAIS ── -->
+          <fieldset class="form-block" data-aos="fade-up">
+            <legend class="form-block__legend">
+              <span class="form-block__icon" aria-hidden="true">👤</span>
+              1. Dados Pessoais
+            </legend>
+
+            <div class="form-row form-row--2">
+              <div class="form-group">
+                <label for="nome" class="form-label">Nome completo <span class="required">*</span></label>
+                <input type="text" id="nome" name="nome" class="form-input" placeholder="Seu nome completo" required autocomplete="name" />
+              </div>
+              <div class="form-group">
+                <label for="nascimento" class="form-label">Data de Nascimento <span class="required">*</span></label>
+                <input type="date" id="nascimento" name="nascimento" class="form-input" required />
+              </div>
+            </div>
+
+            <div class="form-row form-row--2">
+              <div class="form-group">
+                <label for="peso" class="form-label">Peso atual (kg) <span class="required">*</span></label>
+                <input type="number" id="peso" name="peso" class="form-input" placeholder="Ex: 75" min="30" max="300" step="0.1" required />
+              </div>
+              <div class="form-group">
+                <label for="altura" class="form-label">Altura (cm) <span class="required">*</span></label>
+                <input type="number" id="altura" name="altura" class="form-input" placeholder="Ex: 175" min="100" max="250" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Como é sua rotina de trabalho? <span class="required">*</span></label>
+              <div class="chip-group" role="group" aria-label="Rotina de trabalho">
+                <label class="chip"><input type="radio" name="rotina_trabalho" value="Passo a maior parte do tempo sentado" required /><span>Sentado a maior parte</span></label>
+                <label class="chip"><input type="radio" name="rotina_trabalho" value="Passo a maior parte do tempo em pé" /><span>Em pé a maior parte</span></label>
+                <label class="chip"><input type="radio" name="rotina_trabalho" value="Trabalho físico / ativo" /><span>Trabalho físico / ativo</span></label>
+                <label class="chip"><input type="radio" name="rotina_trabalho" value="Misto (sentado e em pé)" /><span>Misto</span></label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="profissao" class="form-label">Profissão</label>
+              <input type="text" id="profissao" name="profissao" class="form-input" placeholder="Sua profissão" autocomplete="organization-title" />
+            </div>
+          </fieldset>
+
+          <!-- ── BLOCO 2: HISTÓRICO DE SAÚDE ── -->
+          <fieldset class="form-block" data-aos="fade-up">
+            <legend class="form-block__legend">
+              <span class="form-block__icon" aria-hidden="true">🏥</span>
+              2. Histórico de Saúde e Ortopédico
+            </legend>
+
+            <div class="form-group">
+              <label class="form-label">Possui alguma doença crônica? <span class="required">*</span></label>
+              <div class="chip-group" role="group" aria-label="Doença crônica">
+                <label class="chip"><input type="radio" name="doenca_cronica" value="Não" required /><span>Não</span></label>
+                <label class="chip"><input type="radio" name="doenca_cronica" value="Hipertensão" /><span>Hipertensão</span></label>
+                <label class="chip"><input type="radio" name="doenca_cronica" value="Diabetes" /><span>Diabetes</span></label>
+                <label class="chip"><input type="radio" name="doenca_cronica" value="Asma" /><span>Asma</span></label>
+                <label class="chip"><input type="radio" name="doenca_cronica" value="Outra" /><span>Outra</span></label>
+              </div>
+              <input type="text" id="doenca_detalhe" name="doenca_detalhe" class="form-input form-input--conditional" placeholder="Qual doença e medicamento contínuo?" style="margin-top:0.75rem" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Já passou por alguma cirurgia? <span class="required">*</span></label>
+              <div class="chip-group" role="group" aria-label="Cirurgia">
+                <label class="chip"><input type="radio" name="cirurgia" value="Não" required /><span>Não</span></label>
+                <label class="chip"><input type="radio" name="cirurgia" value="Sim" /><span>Sim</span></label>
+              </div>
+              <input type="text" id="cirurgia_detalhe" name="cirurgia_detalhe" class="form-input form-input--conditional" placeholder="Qual cirurgia e há quanto tempo?" style="margin-top:0.75rem" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Possui lesão, hérnia ou problema articular? <span class="required">*</span></label>
+              <div class="chip-group chip-group--multi" role="group" aria-label="Lesões">
+                <label class="chip"><input type="checkbox" name="lesao" value="Não possuo lesões" /><span>Não possuo</span></label>
+                <label class="chip"><input type="checkbox" name="lesao" value="Hérnia de disco" /><span>Hérnia de disco</span></label>
+                <label class="chip"><input type="checkbox" name="lesao" value="Condromalácia" /><span>Condromalácia</span></label>
+                <label class="chip"><input type="checkbox" name="lesao" value="Lesão no joelho" /><span>Joelho</span></label>
+                <label class="chip"><input type="checkbox" name="lesao" value="Lesão no ombro" /><span>Ombro</span></label>
+                <label class="chip"><input type="checkbox" name="lesao" value="Lesão na lombar" /><span>Lombar</span></label>
+                <label class="chip"><input type="checkbox" name="lesao" value="Lesão no quadril" /><span>Quadril</span></label>
+                <label class="chip"><input type="checkbox" name="lesao" value="Outra lesão" /><span>Outra</span></label>
+              </div>
+              <input type="text" id="lesao_detalhe" name="lesao_detalhe" class="form-input" placeholder="Detalhe ao máximo (local, tipo, há quanto tempo)" style="margin-top:0.75rem" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Sente dor em alguma articulação durante exercícios?</label>
+              <div class="chip-group chip-group--multi" role="group" aria-label="Dores">
+                <label class="chip"><input type="checkbox" name="dor" value="Não sinto dores" /><span>Não sinto dores</span></label>
+                <label class="chip"><input type="checkbox" name="dor" value="Ombro no supino" /><span>Ombro no supino</span></label>
+                <label class="chip"><input type="checkbox" name="dor" value="Lombar no agachamento" /><span>Lombar no agachamento</span></label>
+                <label class="chip"><input type="checkbox" name="dor" value="Joelho no leg press" /><span>Joelho no leg press</span></label>
+                <label class="chip"><input type="checkbox" name="dor" value="Cervical" /><span>Cervical</span></label>
+                <label class="chip"><input type="checkbox" name="dor" value="Outro movimento" /><span>Outro</span></label>
+              </div>
+              <input type="text" id="dor_detalhe" name="dor_detalhe" class="form-input" placeholder="Descreva: onde sente e em qual movimento" style="margin-top:0.75rem" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Seu médico liberou para musculação? <span class="required">*</span></label>
+              <div class="chip-group" role="group" aria-label="Liberação médica">
+                <label class="chip"><input type="radio" name="liberacao_medica" value="Sim, estou liberado(a)" required /><span>Sim, liberado(a)</span></label>
+                <label class="chip"><input type="radio" name="liberacao_medica" value="Não consultei médico" /><span>Não consultei</span></label>
+                <label class="chip"><input type="radio" name="liberacao_medica" value="Tenho restrições médicas" /><span>Tenho restrições</span></label>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- ── BLOCO 3: HISTÓRICO DE TREINO ── -->
+          <fieldset class="form-block" data-aos="fade-up">
+            <legend class="form-block__legend">
+              <span class="form-block__icon" aria-hidden="true">🏋️</span>
+              3. Histórico de Treinamento
+            </legend>
+
+            <div class="form-group">
+              <label class="form-label">Nível de experiência na musculação <span class="required">*</span></label>
+              <div class="chip-group chip-group--vertical" role="group" aria-label="Nível de experiência">
+                <label class="chip chip--block"><input type="radio" name="nivel" value="Iniciante — Nunca treinei ou parei há muito tempo" required /><span>🌱 Iniciante — Nunca treinei ou parei há muito tempo</span></label>
+                <label class="chip chip--block"><input type="radio" name="nivel" value="Iniciante — Treino há menos de 6 meses" /><span>🔰 Treino há menos de 6 meses</span></label>
+                <label class="chip chip--block"><input type="radio" name="nivel" value="Intermediário — Treino entre 6 meses e 2 anos" /><span>⚡ Intermediário — Entre 6 meses e 2 anos</span></label>
+                <label class="chip chip--block"><input type="radio" name="nivel" value="Avançado — Treino há mais de 2 anos" /><span>🔥 Avançado — Mais de 2 anos contínuos</span></label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Como avalia sua técnica e consciência corporal hoje?</label>
+              <div class="chip-group" role="group" aria-label="Técnica">
+                <label class="chip"><input type="radio" name="tecnica" value="Fraca — Ainda estou aprendendo os movimentos" /><span>Fraca</span></label>
+                <label class="chip"><input type="radio" name="tecnica" value="Regular — Conheço os movimentos mas ainda erro" /><span>Regular</span></label>
+                <label class="chip"><input type="radio" name="tecnica" value="Boa — Executo bem a maioria dos exercícios" /><span>Boa</span></label>
+                <label class="chip"><input type="radio" name="tecnica" value="Excelente — Tenho ótima consciência corporal" /><span>Excelente</span></label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Pratica outra atividade física além da musculação?</label>
+              <div class="chip-group chip-group--multi" role="group" aria-label="Outras atividades">
+                <label class="chip"><input type="checkbox" name="outra_atividade" value="Não pratico" /><span>Não pratico</span></label>
+                <label class="chip"><input type="checkbox" name="outra_atividade" value="Corrida" /><span>Corrida</span></label>
+                <label class="chip"><input type="checkbox" name="outra_atividade" value="Ciclismo" /><span>Ciclismo</span></label>
+                <label class="chip"><input type="checkbox" name="outra_atividade" value="Natação" /><span>Natação</span></label>
+                <label class="chip"><input type="checkbox" name="outra_atividade" value="Crossfit" /><span>Crossfit</span></label>
+                <label class="chip"><input type="checkbox" name="outra_atividade" value="Luta / Artes Marciais" /><span>Luta / Artes Marciais</span></label>
+                <label class="chip"><input type="checkbox" name="outra_atividade" value="Futebol" /><span>Futebol</span></label>
+                <label class="chip"><input type="checkbox" name="outra_atividade" value="Outra atividade" /><span>Outra</span></label>
+              </div>
+              <input type="text" id="outra_atividade_detalhe" name="outra_atividade_detalhe" class="form-input" placeholder="Frequência e duração (ex: corrida 3x/semana, 30 min)" style="margin-top:0.75rem" />
+            </div>
+          </fieldset>
+
+          <!-- ── BLOCO 4: OBJETIVOS ── -->
+          <fieldset class="form-block" data-aos="fade-up">
+            <legend class="form-block__legend">
+              <span class="form-block__icon" aria-hidden="true">🎯</span>
+              4. Objetivos e Foco Estético
+            </legend>
+
+            <div class="form-group">
+              <label class="form-label">Objetivo principal <span class="required">*</span></label>
+              <div class="chip-group" role="group" aria-label="Objetivo">
+                <label class="chip chip--goal"><input type="radio" name="objetivo" value="Hipertrofia — Ganho de massa muscular" required /><span>💪 Hipertrofia</span></label>
+                <label class="chip chip--goal"><input type="radio" name="objetivo" value="Emagrecimento — Perda de gordura" /><span>🔥 Emagrecimento</span></label>
+                <label class="chip chip--goal"><input type="radio" name="objetivo" value="Recondicionamento / Saúde" /><span>🌿 Recondicionamento</span></label>
+                <label class="chip chip--goal"><input type="radio" name="objetivo" value="Hipertrofia com emagrecimento (recomposição)" /><span>⚡ Recomposição</span></label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Grupos musculares que considera seus &quot;pontos fracos&quot; (prioridade) <span class="required">*</span></label>
+              <div class="chip-group chip-group--multi" role="group" aria-label="Pontos fracos">
+                <label class="chip"><input type="checkbox" name="ponto_fraco" value="Glúteos" /><span>Glúteos</span></label>
+                <label class="chip"><input type="checkbox" name="ponto_fraco" value="Posterior de coxa" /><span>Posterior de coxa</span></label>
+                <label class="chip"><input type="checkbox" name="ponto_fraco" value="Quadríceps" /><span>Quadríceps</span></label>
+                <label class="chip"><input type="checkbox" name="ponto_fraco" value="Costas (largura)" /><span>Costas (largura)</span></label>
+                <label class="chip"><input type="checkbox" name="ponto_fraco" value="Costas (espessura)" /><span>Costas (espessura)</span></label>
+                <label class="chip"><input type="checkbox" name="ponto_fraco" value="Ombros" /><span>Ombros</span></label>
+                <label class="chip"><input type="checkbox" name="ponto_fraco" value="Peito" /><span>Peito</span></label>
+                <label class="chip"><input type="checkbox" name="ponto_fraco" value="Bíceps" /><span>Bíceps</span></label>
+                <label class="chip"><input type="checkbox" name="ponto_fraco" value="Tríceps" /><span>Tríceps</span></label>
+                <label class="chip"><input type="checkbox" name="ponto_fraco" value="Abdômen" /><span>Abdômen</span></label>
+                <label class="chip"><input type="checkbox" name="ponto_fraco" value="Panturrilha" /><span>Panturrilha</span></label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Grupos musculares com mais facilidade de desenvolver</label>
+              <div class="chip-group chip-group--multi" role="group" aria-label="Pontos fortes">
+                <label class="chip"><input type="checkbox" name="ponto_forte" value="Glúteos" /><span>Glúteos</span></label>
+                <label class="chip"><input type="checkbox" name="ponto_forte" value="Posterior de coxa" /><span>Posterior de coxa</span></label>
+                <label class="chip"><input type="checkbox" name="ponto_forte" value="Quadríceps" /><span>Quadríceps</span></label>
+                <label class="chip"><input type="checkbox" name="ponto_forte" value="Costas" /><span>Costas</span></label>
+                <label class="chip"><input type="checkbox" name="ponto_forte" value="Ombros" /><span>Ombros</span></label>
+                <label class="chip"><input type="checkbox" name="ponto_forte" value="Peito" /><span>Peito</span></label>
+                <label class="chip"><input type="checkbox" name="ponto_forte" value="Bíceps" /><span>Bíceps</span></label>
+                <label class="chip"><input type="checkbox" name="ponto_forte" value="Tríceps" /><span>Tríceps</span></label>
+                <label class="chip"><input type="checkbox" name="ponto_forte" value="Abdômen" /><span>Abdômen</span></label>
+                <label class="chip"><input type="checkbox" name="ponto_forte" value="Panturrilha" /><span>Panturrilha</span></label>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- ── BLOCO 5: DISPONIBILIDADE ── -->
+          <fieldset class="form-block" data-aos="fade-up">
+            <legend class="form-block__legend">
+              <span class="form-block__icon" aria-hidden="true">⏰</span>
+              5. Disponibilidade e Estrutura
+            </legend>
+
+            <div class="form-group">
+              <label class="form-label">Quantos dias por semana consegue treinar? <span class="required">*</span></label>
+              <div class="chip-group" role="group" aria-label="Dias de treino">
+                <label class="chip"><input type="radio" name="dias_treino" value="2 dias por semana" required /><span>2 dias</span></label>
+                <label class="chip"><input type="radio" name="dias_treino" value="3 dias por semana" /><span>3 dias</span></label>
+                <label class="chip"><input type="radio" name="dias_treino" value="4 dias por semana" /><span>4 dias</span></label>
+                <label class="chip"><input type="radio" name="dias_treino" value="5 dias por semana" /><span>5 dias</span></label>
+                <label class="chip"><input type="radio" name="dias_treino" value="6 dias por semana" /><span>6 dias</span></label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Tempo disponível por sessão de treino <span class="required">*</span></label>
+              <div class="chip-group" role="group" aria-label="Tempo de treino">
+                <label class="chip"><input type="radio" name="tempo_treino" value="Até 45 minutos" required /><span>Até 45 min</span></label>
+                <label class="chip"><input type="radio" name="tempo_treino" value="Entre 45 e 60 minutos" /><span>45–60 min</span></label>
+                <label class="chip"><input type="radio" name="tempo_treino" value="Entre 60 e 90 minutos" /><span>60–90 min</span></label>
+                <label class="chip"><input type="radio" name="tempo_treino" value="Mais de 90 minutos" /><span>+90 min</span></label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Onde vai treinar? <span class="required">*</span></label>
+              <div class="chip-group" role="group" aria-label="Local de treino">
+                <label class="chip"><input type="radio" name="local_treino" value="Academia completa" required /><span>Academia completa</span></label>
+                <label class="chip"><input type="radio" name="local_treino" value="Academia de bairro / pequena" /><span>Academia de bairro</span></label>
+                <label class="chip"><input type="radio" name="local_treino" value="Academia de condomínio" /><span>Condomínio</span></label>
+                <label class="chip"><input type="radio" name="local_treino" value="Em casa" /><span>Em casa</span></label>
+              </div>
+              <input type="text" id="local_detalhe" name="local_detalhe" class="form-input" placeholder="Se for condomínio ou casa, liste os equipamentos disponíveis" style="margin-top:0.75rem" />
+            </div>
+          </fieldset>
+
+          <!-- ── BLOCO 6: FOTOS ── -->
+          <fieldset class="form-block" data-aos="fade-up">
+            <legend class="form-block__legend">
+              <span class="form-block__icon" aria-hidden="true">📸</span>
+              6. Fotos de Avaliação
+            </legend>
+            <div class="anamnese-photo-info">
+              <p>Para analisar sua estrutura, simetria e pontos de melhoria, precisarei de fotos atuais. Você poderá enviá-las diretamente pelo WhatsApp após o envio deste formulário.</p>
+              <div class="photo-instructions">
+                <div class="photo-instruction-item">
+                  <span class="photo-instruction-icon" aria-hidden="true">👗</span>
+                  <span>Biquíni/sunga ou top e short curto colado</span>
+                </div>
+                <div class="photo-instruction-item">
+                  <span class="photo-instruction-icon" aria-hidden="true">💡</span>
+                  <span>Boa iluminação, câmera na altura da cintura</span>
+                </div>
+                <div class="photo-instruction-item">
+                  <span class="photo-instruction-icon" aria-hidden="true">📐</span>
+                  <span>4 posições: Frente, Costas, Perfil Direito e Perfil Esquerdo</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Observações finais ou algo mais que queira compartilhar</label>
+              <textarea id="observacoes" name="observacoes" class="form-input form-textarea" rows="4" placeholder="Conte o que quiser: histórico, motivação, dúvidas..."></textarea>
+            </div>
+          </fieldset>
+
+          <!-- ── SUBMIT ── -->
+          <div class="form-submit" data-aos="fade-up">
+            <p class="form-submit__note">Ao clicar em enviar, suas respostas serão formatadas e enviadas diretamente para o WhatsApp do Carlos.</p>
+            <button type="submit" class="btn btn--primary btn--xl btn--full-mobile" id="submitAnamnese">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+              Enviar Anamnese pelo WhatsApp
+            </button>
+          </div>
+
+        </form>
       </div>
     </section>
 
