@@ -53,13 +53,16 @@
     <!-- ========== HERO ========== -->
     <section class="hero" id="hero" aria-label="Seção principal">
       <div class="hero__bg-overlay" aria-hidden="true"></div>
-      <img
-        src="assets/images/hero-body.png"
-        alt="Carlos Magnus — Personal Trainer"
-        class="hero__bg-img"
-        loading="eager"
-        fetchpriority="high"
-      />
+      <picture>
+        <source srcset="assets/images/hero-body.webp" type="image/webp" />
+        <img
+          src="assets/images/hero-body.png"
+          alt="Carlos Magnus — Personal Trainer"
+          class="hero__bg-img"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </picture>
       <div class="container hero__content">
         <div class="hero__badge" data-aos="fade-down">
           <span class="badge-dot" aria-hidden="true"></span>
@@ -108,24 +111,30 @@
       <div class="container about__inner">
         <div class="about__images" data-aos="fade-right">
           <div class="about__img-main-wrap">
-            <img
-              src="assets/images/carlos-studio.png"
-              alt="Carlos Magnus — Foto de perfil"
-              class="about__img-main"
-              loading="lazy"
-              width="420"
-              height="520"
-            />
+            <picture>
+              <source srcset="assets/images/carlos-studio.webp" type="image/webp" />
+              <img
+                src="assets/images/carlos-studio.png"
+                alt="Carlos Magnus — Foto de perfil"
+                class="about__img-main"
+                loading="eager"
+                width="420"
+                height="520"
+              />
+            </picture>
           </div>
           <div class="about__img-secondary-wrap">
-            <img
-              src="assets/images/carlos-outdoor.png"
-              alt="Carlos Magnus em ambiente externo"
-              class="about__img-secondary"
-              loading="lazy"
-              width="260"
-              height="320"
-            />
+            <picture>
+              <source srcset="assets/images/carlos-outdoor.webp" type="image/webp" />
+              <img
+                src="assets/images/carlos-outdoor.png"
+                alt="Carlos Magnus em ambiente externo"
+                class="about__img-secondary"
+                loading="lazy"
+                width="260"
+                height="320"
+              />
+            </picture>
           </div>
           <div class="about__experience-badge" aria-label="10 anos de experiência">
             <span class="exp-number">10+</span>
