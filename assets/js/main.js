@@ -56,29 +56,45 @@
   const elements = document.querySelectorAll('[data-aos]');
   if (!elements.length) return;
 
+  // Apply delay from data-aos-delay attribute
+  elements.forEach(el => {
+    const delay = el.getAttribute('data-aos-delay');
+    if (delay) el.style.transitionDelay = `${parseInt(delay, 10) / 1000}s`;
+  });
+
+  const triggerElement = (el) => {
+    el.classList.add('aos-animate');
+  };
+
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('aos-animate');
+          triggerElement(entry.target);
           observer.unobserve(entry.target);
         }
       });
     },
-    { threshold: 0.05, rootMargin: '0px 0px -20px 0px' }
+    { threshold: 0.05, rootMargin: '50px 0px 0px 0px' }
   );
 
   elements.forEach(el => observer.observe(el));
 
   // Trigger for elements already in viewport on load
-  setTimeout(() => {
+  const checkVisible = () => {
     elements.forEach(el => {
       const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight) {
-        el.classList.add('aos-animate');
+      if (rect.top < window.innerHeight + 50) {
+        triggerElement(el);
+        observer.unobserve(el);
       }
     });
-  }, 100);
+  };
+
+  // Run immediately and after a short delay
+  checkVisible();
+  setTimeout(checkVisible, 200);
+  setTimeout(checkVisible, 500);
 })();
 
 /* ── 4. COUNTER ANIMATION ── */
