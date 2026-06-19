@@ -65,10 +65,20 @@
         }
       });
     },
-    { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
+    { threshold: 0.05, rootMargin: '0px 0px -20px 0px' }
   );
 
   elements.forEach(el => observer.observe(el));
+
+  // Trigger for elements already in viewport on load
+  setTimeout(() => {
+    elements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight) {
+        el.classList.add('aos-animate');
+      }
+    });
+  }, 100);
 })();
 
 /* ── 4. COUNTER ANIMATION ── */

@@ -1319,20 +1319,22 @@ ul {
 [data-aos] {
   opacity: 0;
   transition-property: opacity, transform;
-  transition-duration: 0.7s;
+  transition-duration: 0.65s;
   transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: opacity, transform;
 }
 
 [data-aos].aos-animate {
-  opacity: 1;
+  opacity: 1 !important;
   transform: none !important;
 }
 
-[data-aos="fade-up"] { transform: translateY(40px); }
-[data-aos="fade-down"] { transform: translateY(-40px); }
-[data-aos="fade-left"] { transform: translateX(40px); }
-[data-aos="fade-right"] { transform: translateX(-40px); }
+[data-aos="fade-up"] { transform: translateY(32px); }
+[data-aos="fade-down"] { transform: translateY(-32px); }
+[data-aos="fade-left"] { transform: translateX(32px); }
+[data-aos="fade-right"] { transform: translateX(-32px); }
 
+[data-aos-delay="0"] { transition-delay: 0s; }
 [data-aos-delay="100"] { transition-delay: 0.1s; }
 [data-aos-delay="200"] { transition-delay: 0.2s; }
 [data-aos-delay="300"] { transition-delay: 0.3s; }
