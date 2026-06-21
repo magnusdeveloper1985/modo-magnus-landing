@@ -1247,6 +1247,23 @@ ul {
 
 .plans__note a:hover { color: var(--accent-dark); }
 
+/* ── Payment block inside plan cards ── */
+.plan-card__payment {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.plan-card__payment-note {
+  display: block;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.01em;
+  line-height: 1.4;
+}
+
 /* ── 11. CTA FINAL ── */
 .cta-final {
   padding: var(--space-3xl) 0;
