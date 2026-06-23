@@ -293,6 +293,8 @@
     const nascimento = formatDate(getVal('nascimento'));
     const peso       = getVal('peso') ? `${getVal('peso')} kg` : '—';
     const altura     = getVal('altura') ? `${getVal('altura')} cm` : '—';
+    const email      = getVal('email') || '—';
+    const whatsapp   = getVal('whatsapp') || '—';
     const profissao  = getVal('profissao') || '—';
     const rotina     = getRadio('rotina_trabalho');
 
@@ -330,6 +332,8 @@
       `• Nome: ${nome}`,
       `• Nascimento: ${nascimento}`,
       `• Peso: ${peso} | Altura: ${altura}`,
+      `• E-mail: ${email}`,
+      `• WhatsApp: ${whatsapp}`,
       `• Profissão: ${profissao}`,
       `• Rotina de trabalho: ${rotina}`,
       ``,
